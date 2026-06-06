@@ -3,6 +3,7 @@
 import { useRef, useState, useCallback, useEffect } from "react";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
+import { assetPath } from "@/lib/asset-path";
 import type { GalleryImage } from "@/data/villa-bamm";
 
 interface GalleryCarouselProps {
@@ -92,7 +93,7 @@ export function GalleryCarousel({ images, onImageClick }: GalleryCarouselProps) 
               style={{ backgroundColor: image.blurColor }}
             >
               <Image
-                src={image.src}
+                src={assetPath(image.src)}
                 alt={image.alt}
                 fill
                 className="object-cover transition-transform duration-500 active:scale-[1.02]"

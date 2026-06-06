@@ -4,6 +4,7 @@ import Image from "next/image";
 import { Container } from "@/components/shared/container";
 import { SectionHeader } from "@/components/shared/section-header";
 import { FadeUp, FadeIn, StaggerContainer, StaggerItem, Parallax } from "@/components/motion/primitives";
+import { assetPath } from "@/lib/asset-path";
 import { villaData } from "@/data/villa-bamm";
 
 export function AboutSection() {
@@ -52,7 +53,7 @@ export function AboutSection() {
               <Parallax speed={0.15}>
                 <div className="relative aspect-[4/3] overflow-hidden rounded-2xl shadow-lg sm:aspect-[4/5]">
                   <Image
-                    src="/images/about/pool-terrace.jpg"
+                    src={assetPath("/images/about/pool-terrace.jpg")}
                     alt="Villa Bamm pool terrace with panoramic sea views"
                     fill
                     className="object-cover"
@@ -64,7 +65,7 @@ export function AboutSection() {
                 <div className="absolute -bottom-6 -left-6 hidden overflow-hidden rounded-2xl border-4 border-background shadow-lg lg:block">
                   <div className="relative aspect-[4/3] w-44">
                     <Image
-                      src="/images/about/living-area.jpg"
+                      src={assetPath("/images/about/living-area.jpg")}
                       alt="Open-plan living area with sea views"
                       fill
                       className="object-cover"

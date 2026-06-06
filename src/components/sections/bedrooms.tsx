@@ -6,6 +6,7 @@ import { Badge } from "@/components/ui/badge";
 import { Container } from "@/components/shared/container";
 import { SectionHeader } from "@/components/shared/section-header";
 import { FadeUp, StaggerContainer, StaggerItem } from "@/components/motion/primitives";
+import { assetPath } from "@/lib/asset-path";
 import { villaData } from "@/data/villa-bamm";
 
 export function BedroomsSection() {
@@ -34,7 +35,7 @@ export function BedroomsSection() {
                 >
                   <div className="relative aspect-[16/10] overflow-hidden bg-muted lg:aspect-auto">
                     <Image
-                      src={room.image}
+                      src={assetPath(room.image)}
                       alt={`${room.name} — ${room.floor}`}
                       fill
                       className="object-cover transition-transform duration-700 group-hover:scale-105"
@@ -88,7 +89,7 @@ export function BedroomsSection() {
                   >
                     <div className="relative aspect-[16/10] overflow-hidden bg-muted">
                       <Image
-                        src={room.image}
+                        src={assetPath(room.image)}
                         alt={`${room.name} — ${room.floor}`}
                         fill
                         className="object-cover transition-transform duration-700 group-hover:scale-105"

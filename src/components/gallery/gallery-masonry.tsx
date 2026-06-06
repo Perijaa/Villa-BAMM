@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { cn } from "@/lib/utils";
+import { assetPath } from "@/lib/asset-path";
 import type { GalleryImage } from "@/data/villa-bamm";
 
 interface GalleryMasonryProps {
@@ -46,7 +47,7 @@ export function GalleryMasonry({ images, onImageClick }: GalleryMasonryProps) {
             aria-label={`View photo: ${image.alt}`}
           >
             <Image
-              src={image.src}
+              src={assetPath(image.src)}
               alt={image.alt}
               fill
               className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"

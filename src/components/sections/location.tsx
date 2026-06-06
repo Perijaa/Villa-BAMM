@@ -5,6 +5,7 @@ import { MapPin, Plane, Anchor, Clock, Car, Store, Waves } from "lucide-react";
 import { Container } from "@/components/shared/container";
 import { SectionHeader } from "@/components/shared/section-header";
 import { FadeUp, StaggerContainer, StaggerItem, Parallax } from "@/components/motion/primitives";
+import { assetPath } from "@/lib/asset-path";
 import { villaData } from "@/data/villa-bamm";
 import type { Distance } from "@/data/villa-bamm";
 
@@ -83,7 +84,7 @@ export function LocationSection() {
               <Parallax speed={0.1}>
                 <div className="relative aspect-[16/10] overflow-hidden rounded-xl shadow-lg sm:rounded-2xl sm:aspect-square lg:aspect-[4/5]">
                   <Image
-                    src="/images/about/omis-overview.jpg"
+                    src={assetPath("/images/about/omis-overview.jpg")}
                     alt="Villa Bamm location — Omiš, Dalmatia, Croatia"
                     fill
                     className="object-cover"

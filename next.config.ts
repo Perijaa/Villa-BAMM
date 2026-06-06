@@ -1,13 +1,12 @@
 import type { NextConfig } from "next";
 
-const isGithubPages = process.env.GITHUB_PAGES === "true";
-const repoBasePath = "/Villa-BAMM";
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 
 const nextConfig: NextConfig = {
   output: "export",
-  ...(isGithubPages && {
-    basePath: repoBasePath,
-    assetPrefix: `${repoBasePath}/`,
+  ...(basePath && {
+    basePath,
+    assetPrefix: `${basePath}/`,
   }),
   trailingSlash: true,
   images: {

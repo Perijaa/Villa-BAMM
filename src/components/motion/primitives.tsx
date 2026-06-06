@@ -1,6 +1,6 @@
 "use client";
 
-import { type ReactNode, type ElementType } from "react";
+import { type ReactNode } from "react";
 import {
   motion,
   useScroll,
@@ -26,7 +26,6 @@ interface FadeUpProps {
   delay?: number;
   duration?: number;
   y?: number;
-  as?: ElementType;
 }
 
 export function FadeUp({
@@ -35,11 +34,9 @@ export function FadeUp({
   delay = 0,
   duration = 0.8,
   y = 32,
-  as = "div",
 }: FadeUpProps) {
-  const Component = motion.create(as as "div");
   return (
-    <Component
+    <motion.div
       initial={{ opacity: 0, y }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-60px" }}
@@ -47,7 +44,7 @@ export function FadeUp({
       className={className}
     >
       {children}
-    </Component>
+    </motion.div>
   );
 }
 
@@ -83,16 +80,6 @@ export function FadeIn({
 // ---------------------------------------------------------------------------
 // StaggerContainer + StaggerItem — staggered children reveals
 // ---------------------------------------------------------------------------
-const staggerContainerVariants: Variants = {
-  hidden: {},
-  visible: {
-    transition: {
-      staggerChildren: 0.1,
-      delayChildren: 0.1,
-    },
-  },
-};
-
 const staggerItemVariants: Variants = {
   hidden: { opacity: 0, y: 24 },
   visible: {

@@ -5,6 +5,7 @@ import { ArrowRight, Clock, Shield, Calendar } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Container } from "@/components/shared/container";
 import { FadeUp } from "@/components/motion/primitives";
+import { assetPath } from "@/lib/asset-path";
 import { villaData } from "@/data/villa-bamm";
 
 export function BookingCtaSection() {
@@ -13,7 +14,7 @@ export function BookingCtaSection() {
       <div className="absolute inset-0 opacity-[0.03]">
         <div
           className="size-full bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: "url('/images/hero.jpg')" }}
+          style={{ backgroundImage: `url('${assetPath("/images/hero.jpg")}')` }}
         />
       </div>
 

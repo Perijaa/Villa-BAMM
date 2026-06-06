@@ -12,6 +12,7 @@ import {
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { HeroParallax } from "@/components/motion/primitives";
+import { assetPath } from "@/lib/asset-path";
 import { villaData } from "@/data/villa-bamm";
 
 const badges = [
@@ -41,7 +42,7 @@ export function HeroSection() {
       <HeroParallax className="absolute inset-0">
         <div className="absolute inset-0 animate-ken-burns">
           <Image
-            src="/images/hero.jpg"
+            src={assetPath("/images/hero.jpg")}
             alt="Villa Bamm infinity pool and sun terrace overlooking the Adriatic Sea, Dalmatian islands, and the ancient town of Omiš"
             fill
             priority

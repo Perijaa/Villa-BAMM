@@ -4,6 +4,7 @@ import { useEffect, useCallback, useRef } from "react";
 import Image from "next/image";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { assetPath } from "@/lib/asset-path";
 import type { GalleryImage } from "@/data/villa-bamm";
 
 interface LightboxProps {
@@ -136,7 +137,7 @@ export function Lightbox({
           key={currentIndex}
         >
           <Image
-            src={image.src}
+            src={assetPath(image.src)}
             alt={image.alt}
             fill
             className="object-contain"
@@ -168,7 +169,7 @@ export function Lightbox({
               aria-label={`Go to photo ${i + 1}`}
             >
               <Image
-                src={img.src}
+                src={assetPath(img.src)}
                 alt=""
                 fill
                 className="object-cover"
